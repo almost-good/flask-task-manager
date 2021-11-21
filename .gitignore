@@ -1,3 +1,4 @@
 /taskenv
+/.vscode
 env.py
 __pycache__/
