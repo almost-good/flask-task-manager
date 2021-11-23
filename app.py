@@ -23,9 +23,7 @@ mongo = PyMongo(app, tls=True, tlsAllowInvalidCertificates=True)
 @app.route("/")
 @app.route("/get_tasks")
 def get_tasks():
-    test = mongo.db.get_collection("tasks").count()
-    print(mongo.db)
-    tasks = mongo.db.tasks.find()
+    tasks = list(mongo.db.tasks.find())
     return render_template("tasks.html", tasks=tasks)
 
 
